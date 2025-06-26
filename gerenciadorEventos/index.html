@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU DE EVENTOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&display=swap');
+        
+        body {
+            background-color: #1a1a1a;
+            background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+        }
+        
+        .street-font {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000;
+        }
+        
+        .sport-btn {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            border-bottom: 3px solid #ff5500;
+        }
+        
+        .transparent-banner {
+            mix-blend-mode: lighten;
+            opacity: 0.9;
+            filter: contrast(1.2) drop-shadow(0 0 5px #ff5500);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 10px #ff5500, inset 0 0 10px #ff5500;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    
+    <!-- Banner Transparente com Efeito -->
+    <div class="w-full max-w-2xl mb-8 relative">
+        <img src="image.png" 
+             alt="Street Events Banner" 
+             class="w-full h-auto transparent-banner">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h1 class="text-5xl md:text-6xl text-center text-amber-500 street-font tracking-tighter">
+                ▞▞▞▞▞▖🅼🅴🅽🆄 🅳🅴 🅴🆅🅴🅽🆃🅾🆂▝▞▞▞▞▞
+            </h1>
+            <br>
+        </div>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="bg-black bg-opacity-70 p-8 rounded-lg neon-border w-full max-w-md">
+        <!-- Menu de Navegação -->
+        <nav class="flex flex-col gap-6">
+            <a href="cadastroParticipantes.html" 
+               class="sport-btn bg-gray-900 text-amber-400 py-4 px-6 text-center street-font text-sm md:text-base hover:bg-gray-800 hover:text-white transform hover:scale-105">
+               ▸ CADASTRO DE ATLETAS
+            </a>
+            
+            <a href="cadastroEventos.html"
+               class="sport-btn bg-gray-900 text-amber-400 py-4 px-6 text-center street-font text-sm md:text-base hover:bg-gray-800 hover:text-white transform hover:scale-105">
+               ▸ CADASTRO DE BATTLES
+            </a>
+            
+            <a href="#"
+               class="sport-btn bg-gray-900 text-amber-400 py-4 px-6 text-center street-font text-sm md:text-base hover:bg-gray-800 hover:text-white transform hover:scale-105">
+               ▸ GALERIA UNDERGROUND
+            </a>
+        </nav>
+        
+    
+            </p>
+        </div>
+    </div>
+</body>
+</html>

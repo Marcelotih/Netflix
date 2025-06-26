@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE ATLETAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&display=swap');
+        
+        body {
+            background-color: #1a1a1a;
+            background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            color: #e2e2e2;
+        }
+        
+        .street-font {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #000;
+            letter-spacing: 1px;
+        }
+        
+        .street-title {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 3px;
+        }
+        
+        .street-input {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff5500;
+            color: white;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+        
+        .street-input:focus {
+            outline: none;
+            border-color: #ff8c00;
+            box-shadow: 0 0 10px #ff5500;
+        }
+        
+        .street-btn {
+            background: linear-gradient(to bottom, #ff5500, #cc4400);
+            border: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            border-bottom: 3px solid #ff8c00;
+        }
+        
+        .street-btn:hover {
+            background: linear-gradient(to bottom, #ff8c00, #cc5500);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 85, 0, 0.4);
+        }
+        
+        .participant-item {
+            background: rgba(30, 30, 30, 0.7);
+            border-left: 4px solid #ff5500;
+            padding: 10px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .participant-item span {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ff5500;
+            background: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .checkbox-container input[type="checkbox"]:checked {
+            background: #ff5500;
+        }
+        
+        .checkbox-container input[type="checkbox"]:checked::after {
+            content: "✓";
+            color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-10">
+    <div class="max-w-3xl mx-auto">
+        <!-- Cabeçalho Street -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl text-amber-500 street-title mb-4">
+                ▞▞▞▞▞▖🅲🅰🅳🅰🆂🆃🆁🅾 🅳🅴 🅰🆃🅻🅴🆃🅰🆂▝▞▞▞▞▞
+            </h1>
+            <p class="text-gray-400 street-font text-sm">
+                PREENCHA OS DADOS DO COMPETIDOR
+            </p>
+        </div>
+        
+        <!-- Formulário Street -->
+        <form id="formParticipante" class="space-y-6 mb-10 p-6 bg-black bg-opacity-70 rounded-lg border border-gray-800">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="nome" class="block text-amber-400 street-font text-sm mb-2">NOME:</label>
+                    <input type="text" id="nome" name="nome" required 
+                           class="w-full street-input street-font text-sm">
+                </div>
+                
+                <div>
+                    <label for="idade" class="block text-amber-400 street-font text-sm mb-2">IDADE:</label>
+                    <input type="number" id="idade" name="idade" required 
+                           class="w-full street-input street-font text-sm">
+                </div>
+                
+                <div>
+                    <label for="genero" class="block text-amber-400 street-font text-sm mb-2">GÊNERO:</label>
+                    <select name="genero" id="genero" required 
+                            class="w-full street-input street-font text-sm">
+                        <option value="">SELECIONE</option>
+                        <option value="Masculino">MASCULINO</option>
+                        <option value="Feminino">FEMININO</option>
+                        <option value="Outro">OUTRO</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="evento" class="block text-amber-400 street-font text-sm mb-2">MODALIDADE:</label>
+                    <select name="evento" id="evento" required 
+                            class="w-full street-input street-font text-sm">
+                        <option value="">SELECIONE</option>
+                        <option value="SKATE">SKATE</option>
+                        <option value="BASQUETE">BASQUETE</option>
+                        <option value="PARKOUR">PARKOUR</option>
+                        <option value="BREAK">BREAK</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="checkbox-container">
+                <input required type="checkbox" name="aceite" id="aceite">
+                <label for="aceite" class="text-gray-300 street-font text-xs">
+                    ACEITO OS TERMOS E CONDIÇÕES DA COMPETIÇÃO
+                </label>
+            </div>
+            
+            <div class="text-center pt-4">
+                <button type="submit" class="street-btn street-font text-sm">
+                    CONFIRMAR INSCRIÇÃO
+                </button>
+            </div>
+        </form>
+        
+        <!-- Lista de Participantes -->
+        <div class="bg-black bg-opacity-70 p-6 rounded-lg border border-gray-800">
+            <h3 class="text-2xl text-amber-500 street-title mb-4 border-b border-amber-500 pb-2">
+                ▸ ATLETAS INSCRITOS
+            </h3>
+            <ul id="listaParticipantes" class="space-y-3"></ul>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <div class="text-center mt-10">
+        <p class="text-gray-600 street-font text-xs">
+            #STREETCOMPETITION #URBANSPORTS #SKATECULTURE
+        </p>
+    </div>
+
+    <!-- Mude para o nome do SEU arquivo JS -->
+    <script src="cadastroParticipantes.js"></script>
+</body>
+</html>

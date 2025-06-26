@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Jogos</title>
+</head>
+<body>
+    <h2>Cadastro de Jogos</h2>
+    <form id="formJogo">Nome 
+        <input type="text" id="titulo" name="titulo" required>
+        <br>
+        <br>
+        <label for="ano">Ano de lançamento:</label> 
+<input type="text" id="ano" name="ano"required>
+<br>
+<label for="plataforma">Plataforma</label>
+<select name="plataforma" id="plataforma">
+<option value="">Selecione</option>
+<option value="pc">PC</option>
+<option value="mobile">Mobile</option>
+<option value="console">Console</option>
+<option value="Outro">Outro</option>
+</select>
+
+<option value=""></option>
+<br>
+<label for="genero">Genero</label>
+<select name="genero" id="genero">
+<option value="">Selecione</option>
+<option value="acao">Ação</option>
+<option value="esporte">Esporte</option>
+<option value="Estratégia">Estratégia</option>
+<option value="Puzzle">Puzzle</option>
+<option value="RPG">RPG</option>
+<option value="Outro">Outro</option>
+</select>
+<br>
+<br>
+<button type="submit">Cadastrar Jogos</button>
+    </form>
+    <!--Aqui encontramos a lista de filmes cadastrados-->
+    <h3>Jogos Cadastrados</h3>
+    <ul id="listarJogos"></ul>
+    <script src="formCadastroJogos.js"></script>
+</body>
+</html>

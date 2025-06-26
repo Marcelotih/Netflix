@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE EVENTOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&display=swap');
+        
+        body {
+            background-color: #1a1a1a;
+            background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            color: #e2e2e2;
+        }
+        
+        .street-font {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #000;
+            letter-spacing: 1px;
+        }
+        
+        .street-title {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 3px;
+        }
+        
+        .street-input {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff5500;
+            color: white;
+            padding: 10px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .street-input:focus {
+            outline: none;
+            border-color: #ff8c00;
+            box-shadow: 0 0 10px #ff5500;
+        }
+        
+        .street-btn {
+            background: linear-gradient(to bottom, #ff5500, #cc4400);
+            border: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            border-bottom: 3px solid #ff8c00;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+        }
+        
+        .street-btn:hover {
+            background: linear-gradient(to bottom, #ff8c00, #cc5500);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 85, 0, 0.4);
+        }
+        
+        .evento-item {
+            background: rgba(30, 30, 30, 0.7);
+            border-left: 4px solid #ff5500;
+            padding: 12px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .evento-item span {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #ff5500;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ff5500;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+        }
+        
+        select {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff5500;
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-10">
+    <div class="max-w-3xl mx-auto">
+        <!-- Cabeçalho Street -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl text-amber-500 street-title mb-4">
+                ▞▞▞▞▞▖🅲🅰🅳🅰🆂🆃🆁🅾 🅳🅴 🅴🆅🅴🅽🆃🅾🆂▝▞▞▞▞▞
+            </h1>
+            <p class="text-gray-400 street-font text-sm">
+                REGISTRE SUA COMPETIÇÃO
+            </p>
+        </div>
+        
+        <!-- Formulário Street -->
+        <div class="form-container">
+            <form id="formEvento" class="space-y-6">
+                <div class="form-group">
+                    <label for="titulo">NOME DO EVENTO:</label>
+                    <input type="text" id="titulo" name="titulo" required class="street-input street-font text-sm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="ano">DATA:</label>
+                    <input type="text" id="ano" name="ano" required class="street-input street-font text-sm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="genero">MODALIDADE:</label>
+                    <select name="genero" id="genero" class="street-input street-font text-sm">
+                        <option value="">SELECIONE</option>
+                        <option value="futebol">FUTEBOL</option>
+                        <option value="volei">VÔLEI</option>
+                        <option value="basquete">BASQUETE</option>
+                        <option value="atletismo">ATLETISMO</option>
+                        <option value="outro">OUTRO</option>
+                    </select>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <button type="submit" class="street-btn">
+                        CADASTRAR EVENTO
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Lista de Eventos -->
+        <div class="bg-black bg-opacity-70 p-6 rounded-lg border border-gray-800">
+            <h3 class="text-2xl text-amber-500 street-title mb-4 border-b border-amber-500 pb-2">
+                ▸ EVENTOS CADASTRADOS
+            </h3>
+            <ul id="listarEventos" class="space-y-3"></ul>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <div class="text-center mt-10">
+        <p class="text-gray-600 street-font text-xs">
+            #STREETCOMPETITION #URBANSPORTS #SPORTSCULTURE
+        </p>
+    </div>
+
+    <script src="cadastroEventos.js"></script>
+</body>
+</html>
